@@ -11,14 +11,14 @@ export class FileReaderService {
     private zipService: ZipService,
     private musicNotation: MusicNotationService) { }
 
-  readFileInput(files: FileList): Promise<boolean> {
+  readFileInput(files: FileList): void {
     if (files.length <= 0) {
-      return new Promise((resolve, reject) => resolve(false));
+      return;
     }
 
     const file = files[0];
     if (file.name.endsWith('.xml')) {
-      return this.readMusicXMLFile(file);
+      this.readMusicXMLFile(file);
     } else if (file.name.endsWith('.mxl')) {
       this.zipService.getEntries(file)
       .subscribe(zipEntries => {
@@ -26,7 +26,7 @@ export class FileReaderService {
           if (entry.filename.endsWith('.xml') && !entry.filename.endsWith('container.xml')) {
             this.zipService.getData(entry)
             .data.subscribe(zipData => {
-              return this.readMusicXMLFile(zipData);
+              this.readMusicXMLFile(zipData);
             });
             break;
           }
@@ -37,11 +37,12 @@ export class FileReaderService {
     }
   }
 
-  readMusicXMLFile(musicXMLFile: Blob): Promise<boolean> {
-    return musicXMLFile.text()
+  readMusicXMLFile(musicXMLFile: Blob): void {
+    musicXMLFile.text()
     .then(text => {
       this.musicNotation.renderXML(text);
-      return true;
+    }).catch(error => {
+      console.error('Error during rendering:', error);
     });
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FileReaderService } from '../../services/file-reader.service';
+import { MusicNotationService } from '../../services/music-notation.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,12 @@ import { FileReaderService } from '../../services/file-reader.service';
 })
 export class HeaderComponent {
 
-  constructor(public fileReader: FileReaderService) { }
+  constructor(
+    public fileReader: FileReaderService,
+    public notationService: MusicNotationService
+    ) { }
 
+  toggleCursor(): void {
+    this.notationService.toggleCursor();
+  }
 }

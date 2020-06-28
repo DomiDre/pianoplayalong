@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FileReaderService } from './services/file-reader.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,6 @@ import { FileReaderService } from './services/file-reader.service';
 })
 export class AppComponent {
 
-  constructor(public fileReader: FileReaderService) { }
+  constructor() { }
 
 }

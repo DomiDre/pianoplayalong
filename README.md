@@ -7,9 +7,8 @@ The idea is to use a score written with MuseScore (https://musescore.org/en).
 
 Resources used for the development:
 * [Angular 2 (v10.0.0)](https://angular.io/) (Web Framework)
-* [Verovio](https://www.verovio.org) (render musical notation)
-* [zip.js](https://gildas-lormeau.github.io/zip.js/) (unzip .mscz files of MuseScore)
-* [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js) (parse XML file)
+* [OpenSheetMusicDisplay](opensheetmusicdisplay.org) (render musical notation)
+* [zip.js](https://gildas-lormeau.github.io/zip.js/) (unzip files of MuseScore)
 
 Still to implement:
 * Proper parsing from MuseScore XML format to Verovio Format

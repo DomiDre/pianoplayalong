@@ -1,0 +1,3 @@
+<div *ngIf="notationService.scoreSVG"
+  [innerHTML]="sanitizer.bypassSecurityTrustHtml(notationService.scoreSVG)">
+</div>

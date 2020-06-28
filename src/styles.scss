@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+
+.border {
+  border: solid black 1px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.bold {
+  font-weight: 900
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.no-bullets {
+  list-style: none;
+}
+

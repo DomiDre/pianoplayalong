@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FileReaderService } from './services/file-reader.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pianoplayalong';
+
+  constructor(public fileReader: FileReaderService) { }
+
 }

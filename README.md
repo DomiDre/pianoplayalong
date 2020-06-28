@@ -12,7 +12,7 @@ completely client side.
 
 Resources used for the development:
 * [Angular 2 (v10.0.0)](https://angular.io/) (Web Framework)
-* [OpenSheetMusicDisplay](opensheetmusicdisplay.org) (render musical notation)
+* [OpenSheetMusicDisplay](https://opensheetmusicdisplay.org) (render musical notation)
 * [zip.js](https://gildas-lormeau.github.io/zip.js/) (unzip files of MuseScore)
 
 Still to implement:

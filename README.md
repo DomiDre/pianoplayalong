@@ -3,7 +3,12 @@
 A basic web application for people with a digital keyboard to play along with a score
 sheet while receiving direct feedback on the correctness of the playing.
 
-The idea is to use a score written with MuseScore (https://musescore.org/en).
+I am still in the exploring around phase whether it's going to work out :-).
+
+The idea is to use a score in MusicXML format for example written with 
+MuseScore (https://musescore.org/en). Make the app responsive to keyboard inputs 
+(possibly using a browser plugin). And then have an interactive playground that is 
+completely client side.
 
 Resources used for the development:
 * [Angular 2 (v10.0.0)](https://angular.io/) (Web Framework)
@@ -11,7 +16,6 @@ Resources used for the development:
 * [zip.js](https://gildas-lormeau.github.io/zip.js/) (unzip files of MuseScore)
 
 Still to implement:
-* Proper parsing from MuseScore XML format to Verovio Format
-* Proper rendering of the musical notation
 * Receiving and rendering of played notes on the keyboard
+* Continuous update of currently played measure or note
 * Different logics to play along

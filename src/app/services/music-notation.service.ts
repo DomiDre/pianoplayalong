@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { OpenSheetMusicDisplay } from 'opensheetmusicdisplay';
-import { range } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

@@ -14,7 +14,4 @@ export class HeaderComponent {
     public notationService: MusicNotationService
     ) { }
 
-  toggleCursor(): void {
-    this.notationService.toggleCursor();
-  }
 }

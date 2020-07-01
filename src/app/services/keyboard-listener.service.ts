@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import * as webmidi from "webmidi";
-
+import * as webmidi from 'webmidi';
+import { MusicNotationService } from './music-notation.service';
 @Injectable({
   providedIn: 'root'
 })
 export class KeyboardListenerService {
 
   initialized = false;
-  constructor() { }
+  constructor(private musicNotation: MusicNotationService) { }
 
   init(): void {
     // check if available
@@ -27,7 +27,7 @@ export class KeyboardListenerService {
         if (keyboardInput) {
           webmidi.default.inputs[1].addListener('noteon', 'all',
           (e) => {
-            console.log('Received noteon message (' + e.note.name + e.note.octave + ').');
+            this.musicNotation.handleKeyboardInput(e.note.number);
           });
         } else {
           console.log('Failed to find keyboard.');

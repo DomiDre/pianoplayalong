@@ -5,6 +5,6 @@
         type="file"
         id="file"
         (change)="fileReader.readFileInput($event.target.files)"/>
-        <button (click)="toggleCursor()">Play</button>
+        <button (click)="notationService.resetCursor()">Reset</button>
     </span>
 </div>

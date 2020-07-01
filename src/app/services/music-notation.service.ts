@@ -11,7 +11,7 @@ export class MusicNotationService {
   loadedSheet = false;
   pressedKeys: Map<number, [boolean, NodeJS.Timeout]>;
 
-  notesToPlay: number[] = [];
+  notesToPlay: Set<number>;
 
   playInterval: NodeJS.Timeout;
 
@@ -40,15 +40,17 @@ export class MusicNotationService {
   }
 
   readNextNotesToPlay(): void {
-    this.notesToPlay = [];
-    while (this.notesToPlay.length <= 0) {
+    this.notesToPlay = new Set();
+    while (this.notesToPlay.size <= 0) {
       const readNotes = this.osmd.cursor.NotesUnderCursor();
       for (const note of readNotes) {
-        if (note.halfTone > 20 && note.halfTone <= 108) {
-          this.notesToPlay.push(note.halfTone);
+        console.log(note);
+        if (note.halfTone > 0) {
+          this.notesToPlay.add(note.halfTone + 12);
         }
       }
     }
+    console.log(this.notesToPlay)
   }
 
   toggleCursor(): void {

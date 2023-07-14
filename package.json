@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@types/webmidi": "^2.0.4",
-    "opensheetmusicdisplay": "^0.8.2",
+    "opensheetmusicdisplay": "^1.8.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "webmidi": "^2.5.1",
